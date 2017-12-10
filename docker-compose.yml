@@ -1,0 +1,22 @@
+version: "2"
+
+
+    mqtt: docker run -d -p 1883:1883  leojrfs/mosquitto-arm:1.4.12
+
+version: "2"
+services:
+        mqtt:
+                build: mqtt
+                ports:
+                        - "1883:1883"
+                restart: "always"
+        nodered:
+                build: nodered/node-red-docker:rpi
+                ports:
+                        - "1880:1880"
+                links:
+                        - "mqtt"
+                volumes:
+                        - "./nodereddata:/usr/src/app/.nodered-rt"
+                restart: "always"
+
