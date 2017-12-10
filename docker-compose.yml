@@ -1,8 +1,4 @@
-version: "2"
-
-
-    mqtt: docker run -d -p 1883:1883  leojrfs/mosquitto-arm:1.4.12
-
+#    mqtt: docker run -d -p 1883:1883  leojrfs/mosquitto-arm:1.4.12
 version: "2"
 services:
         mqtt:
