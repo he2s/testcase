@@ -13,6 +13,6 @@ services:
                 links:
                         - "mqtt"
                 volumes:
-                        - "./nodereddata:/usr/src/app/.nodered-rt"
+                        - "./nodered/data/flows.json:/data/flows.json"
                 restart: "always"
 
