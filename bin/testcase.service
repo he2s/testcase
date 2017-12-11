@@ -1,0 +1,15 @@
+[Unit]
+Description=Flows testcase
+After=network.target
+After=docker.service
+
+[Service]
+ExecStart=/home/qosit/bin/start.sh
+WorkingDirectory=/home/qosit
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=qosit
+
+[Install]
+WantedBy=multi-user.target
